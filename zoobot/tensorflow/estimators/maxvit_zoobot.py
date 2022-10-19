@@ -123,7 +123,7 @@ class Attention(tf.keras.layers.Layer):
   def __init__(self,
                hidden_size,
                head_size,
-               num_heads=None,
+               num_heads=0,
                dropatt=0.0,
                attn_axis=0,
                rel_attn_type=None,
