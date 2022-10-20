@@ -97,8 +97,9 @@ def get_model(
     always_augment=True,
     dropout_rate=0.2,
     effnet_model = efficientnet_standard.EfficientNetB0,
-    maxvit_model = 'MaxViTTiny',  # this line defines the model!
+    maxvit_model = 'MaxViTTiniest',  # this line defines the model!
     use_effnet = False
+
     ):
     """
     Create a trainable efficientnet model.
@@ -158,7 +159,7 @@ def get_model(
         maxvit_model=maxvit_standard.get_maxvit_model(
             # maxvit_model,
             input_shape = shape_after_preprocessing_layers,
-            get_maxvit = which_maxvit,
+            get_maxvit = maxvit_model,
             use_image_weights=use_imagenet_weights
         )
         model.add(maxvit_model)
